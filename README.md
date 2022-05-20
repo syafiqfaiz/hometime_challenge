@@ -1,24 +1,20 @@
-# README
+# Hi
+---
+#### Here is the challenge for HomeTime
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# To start
+1. Install all gem `bundle`
+2. Setup database `rails db:create && rails db:migrate`
+3. Run the server `rails s`, voila
+4. 
+# Test
+We are using rspec and rswag for nice documentation
+You can visit the documentation by heading to `/api-docs`
+To run the test just run `rspec`
 
-Things you may want to cover:
+## Known issues
+1. We have a database cleaner issues. Rspec didnt truncate the database after test suites. It cause the test to failed when ran again.
+2. The test suite can be refactored. But I dont have the time for that
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> Hoping to hear back soon. =)
