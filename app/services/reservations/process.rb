@@ -3,19 +3,19 @@ module Reservations
     class << self
       def perform(params)
         if is_payload_1(params)
-          order_attr, reservation_attr = Reservations::ProcessPayloadOne.perform(params)
+          guest_attr, reservation_attr = Reservations::ProcessPayloadOne.perform(params)
         elsif is_payload_2(params)
-          order_attr, reservation_attr = Reservations::ProcessPayloadTwo.perform(params)
+          guest_attr, reservation_attr = Reservations::ProcessPayloadTwo.perform(params)
         else
           raise 'Unprocessable entity'
         end
 
-        @guest = Guest.find_by_email(order_attr[:email])
+        @guest = Guest.find_by_email(guest_attr[:email])
 
         if @guest
-          @guest.update(order_attr)
+          @guest.update(guest_attr)
         else
-          @guest = Guest.create(order_attr)
+          @guest = Guest.create(guest_attr)
         end
 
         @reservation = @guest.reservations

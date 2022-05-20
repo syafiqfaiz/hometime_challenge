@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservations::Process.perform(params)
 
-    head :ok
+    head :created
   end
 
 end

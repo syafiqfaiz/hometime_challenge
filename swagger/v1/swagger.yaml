@@ -1,0 +1,62 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/reservations":
+    post:
+      summary: Creates a reservation for payload 1
+      tags:
+      - reservation 1
+      parameters: []
+      responses:
+        '201':
+          description: new reservation with same guest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reservation_code:
+                  type: string
+                start_date:
+                  type: string
+                end_date:
+                  type: string
+                nights:
+                  type: integer
+                guests:
+                  type: integer
+                adults:
+                  type: integer
+                children:
+                  type: integer
+                infants:
+                  type: integer
+                status:
+                  type: string
+                guest:
+                  type: object
+                  first_name:
+                    type: string
+                  last_name:
+                    type: string
+                  phone:
+                    type: string
+                  email:
+                    type: string
+                currency:
+                  type: string
+                payout_price:
+                  type: string
+                security_price:
+                  type: string
+                total_price:
+                  type: string
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000
