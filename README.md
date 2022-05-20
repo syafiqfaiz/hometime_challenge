@@ -6,7 +6,7 @@
 1. Install all gem `bundle`
 2. Setup database `rails db:create && rails db:migrate`
 3. Run the server `rails s`, voila
-4. 
+
 # Test
 We are using rspec and rswag for nice documentation
 You can visit the documentation by heading to `/api-docs`
